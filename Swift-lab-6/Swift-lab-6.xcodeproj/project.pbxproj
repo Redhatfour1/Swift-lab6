@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFA5970E1F146668004B4AFF /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA5970D1F146668004B4AFF /* JSONParser.swift */; };
 		BFF6319D1F115D7C0079D32A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF6319C1F115D7C0079D32A /* AppDelegate.swift */; };
 		BFF6319F1F115D7C0079D32A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF6319E1F115D7C0079D32A /* ViewController.swift */; };
 		BFF631A21F115D7C0079D32A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF631A01F115D7C0079D32A /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BFA5970D1F146668004B4AFF /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		BFF631991F115D7C0079D32A /* Swift-lab-6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-lab-6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF6319C1F115D7C0079D32A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFF6319E1F115D7C0079D32A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BFA5970F1F147C22004B4AFF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFF631B21F116F5E0079D32A /* Tweet.json */,
+				BFF631AE1F1162C10079D32A /* User.swift */,
+				BFF631B01F11652C0079D32A /* Tweet.swift */,
+				BFA5970D1F146668004B4AFF /* JSONParser.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BFA597101F147C8F004B4AFF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFF631A01F115D7C0079D32A /* Main.storyboard */,
+				BFF631A51F115D7C0079D32A /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BFA597111F147CE4004B4AFF /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				BFF6319C1F115D7C0079D32A /* AppDelegate.swift */,
+				BFF631A31F115D7C0079D32A /* Assets.xcassets */,
+				BFF631A81F115D7C0079D32A /* Info.plist */,
+			);
+			name = Supporting;
+			sourceTree = "<group>";
+		};
+		BFA597121F147D0E004B4AFF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BFF6319E1F115D7C0079D32A /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		BFF631901F115D7C0079D32A = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +100,10 @@
 		BFF6319B1F115D7C0079D32A /* Swift-lab-6 */ = {
 			isa = PBXGroup;
 			children = (
-				BFF6319C1F115D7C0079D32A /* AppDelegate.swift */,
-				BFF6319E1F115D7C0079D32A /* ViewController.swift */,
-				BFF631AE1F1162C10079D32A /* User.swift */,
-				BFF631B01F11652C0079D32A /* Tweet.swift */,
-				BFF631B21F116F5E0079D32A /* Tweet.json */,
-				BFF631A01F115D7C0079D32A /* Main.storyboard */,
-				BFF631A31F115D7C0079D32A /* Assets.xcassets */,
-				BFF631A51F115D7C0079D32A /* LaunchScreen.storyboard */,
-				BFF631A81F115D7C0079D32A /* Info.plist */,
+				BFA5970F1F147C22004B4AFF /* Model */,
+				BFA597101F147C8F004B4AFF /* View */,
+				BFA597121F147D0E004B4AFF /* Controllers */,
+				BFA597111F147CE4004B4AFF /* Supporting */,
 			);
 			path = "Swift-lab-6";
 			sourceTree = "<group>";
@@ -150,6 +185,7 @@
 				BFF6319D1F115D7C0079D32A /* AppDelegate.swift in Sources */,
 				BFF631AF1F1162C10079D32A /* User.swift in Sources */,
 				BFF631B11F11652C0079D32A /* Tweet.swift in Sources */,
+				BFA5970E1F146668004B4AFF /* JSONParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +349,7 @@
 				BFF631AD1F115D7D0079D32A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
