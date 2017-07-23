@@ -18,6 +18,8 @@
 		BFA597361F1DC0DA004B4AFF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFA597351F1DC0DA004B4AFF /* Info.plist */; };
 		BFA597381F1DC157004B4AFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFA597371F1DC157004B4AFF /* Main.storyboard */; };
 		BFA5973A1F1DC178004B4AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFA597391F1DC178004B4AFF /* LaunchScreen.storyboard */; };
+		BFB073971F241B2F003824BD /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB073961F241B2F003824BD /* TweetCell.swift */; };
+		BFB073991F242BED003824BD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB073981F242BED003824BD /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		BFA597351F1DC0DA004B4AFF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		BFA597371F1DC157004B4AFF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = SOURCE_ROOT; };
 		BFA597391F1DC178004B4AFF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		BFB073961F241B2F003824BD /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		BFB073981F242BED003824BD /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BFF631991F115D7C0079D32A /* Swift-lab-6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-lab-6.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -61,6 +65,7 @@
 		BFA597101F147C8F004B4AFF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BFB073961F241B2F003824BD /* TweetCell.swift */,
 				BFA597371F1DC157004B4AFF /* Main.storyboard */,
 				BFA597391F1DC178004B4AFF /* LaunchScreen.storyboard */,
 			);
@@ -81,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				BFA5972C1F1DBADD004B4AFF /* ViewController.swift */,
+				BFB073981F242BED003824BD /* DetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -187,11 +193,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFA597321F1DC038004B4AFF /* AppDelegate.swift in Sources */,
+				BFB073971F241B2F003824BD /* TweetCell.swift in Sources */,
 				BFA5972E1F1DBADD004B4AFF /* ViewController.swift in Sources */,
 				BFA597281F1DBAAF004B4AFF /* JSONParser.swift in Sources */,
 				BFA5972A1F1DBAAF004B4AFF /* User.swift in Sources */,
 				BFA5971E1F1DB35F004B4AFF /* API.swift in Sources */,
 				BFA597291F1DBAAF004B4AFF /* Tweet.swift in Sources */,
+				BFB073991F242BED003824BD /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
