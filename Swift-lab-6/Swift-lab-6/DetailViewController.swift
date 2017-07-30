@@ -9,6 +9,8 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -29,5 +31,8 @@ class DetailViewController: UIViewController {
 //        print(selectedTweet.user?.name)
 //        print(selectedTweet.user?.location)
 //        print(selectedTweet.text)
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "selectedViewController", sender: nil)
     }
 }

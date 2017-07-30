@@ -39,8 +39,9 @@ class API {
         }
         print("The login function is complete and being cleared from memory")
     }
-    private func updateTimeline(completion: @escaping TweetsCompletion) {
-        let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
+    private func updateTimeline(url: URL, completion: @escaping TweetsCompletion) {
+//        let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json")
+        
         let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: .GET, url: url, parameters: nil)
         
         print("This is the server type for twitter: \(SLServiceTypeTwitter)")
@@ -80,15 +81,23 @@ class API {
         if self.account == nil {
             self.login(completion: { (account) in
                 self.account = account
-                self.updateTimeline(completion: { (tweets) in
-                    completion(tweets)
-                })
+                if let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json") {
+                    self.updateTimeline(url: url, completion: { (tweets) in
+                        completion(tweets)
+                    })
+                }
             })
         } else {
-            self.updateTimeline(completion: { (tweets) in
-                completion(tweets)
+            if let url = URL(string: "https://api.twitter.com/1.1/statuses/home_timeline.json") {            self.updateTimeline(url: url, completion: { (tweets) in
+                    completion(tweets)
+                })
+            }
+        }
+    }
+    func getTweetsFor(username: String, completion: @escaping TweetsCompletion) {
+        if let url = URL(string: "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=\(username)") {
+            self.updateTimeline(url: url, completion: { (tweets) in
             })
         }
     }
 }
-

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -18,8 +18,16 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+//        Used when working with Nib Cells
+        
+        let nib = UINib(nibName: "TweetCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: "tweetCell")
+        
+//        This is used for dynamic cell height
+        
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 75
         
@@ -28,7 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 //            self.allTweets = allTweets
 //            self.tableView.reloadData()
 //        }
-        
+//        API Call for tweets
         
         API.shared.getTweets { (tweets) in
             if let tweets = tweets {
@@ -43,9 +51,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "detailViewController" {
-        
-        if let selectedIndex = self.tableView.indexPathForSelectedRow {
-            let selectedTweet = self.allTweets[selectedIndex.row]
+            if let selectedIndex = self.tableView.indexPathForSelectedRow {
+                let selectedTweet = self.allTweets[selectedIndex.row]
     
             
             if let destinationController = segue.destination as? DetailViewController {
@@ -62,12 +69,17 @@ class ViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCell
         let currentTweet = self.allTweets[indexPath.row]
         
-        cell.usernameLabel.text = currentTweet.user?.name
-        cell.tweetLabel.text = currentTweet.text
+        cell.tweet = currentTweet
+        
+//        cell.usernameLabel.text = currentTweet.user?.name
+//        cell.tweetLabel.text = currentTweet.text
         
 //        cell.textLabel?.text = currentTweet.user?.name
 //        cell.detailTextLabel?.text = "\(currentTweet.id) - \(currentTweet.text)"
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detailViewController", sender: nil)
     }
 }
