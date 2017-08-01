@@ -26,11 +26,21 @@ class DetailViewController: UIViewController {
         self.usernameLabel.text = selectedTweet.user?.name
         self.locationLabel.text = selectedTweet.user?.location
         self.textLabel.text = selectedTweet.text
+        self.activityIndicator.stopAnimating()
         
 //        print("DetailViewController got the following Tweet:")
 //        print(selectedTweet.user?.name)
 //        print(selectedTweet.user?.location)
 //        print(selectedTweet.text)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "selectedTimelineSegue" {
+            if let destination = segue.destination as?
+                SelectedViewController {
+                destination.selectedTimeline = self.selectedTweet
+            }
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "selectedViewController", sender: nil)

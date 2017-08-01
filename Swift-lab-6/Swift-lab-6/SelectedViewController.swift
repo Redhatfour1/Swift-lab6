@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectedViewController: UIViewController, UITableViewDataSource {
+class SelectedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var selectedTimelineView: UITableView!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -17,6 +17,7 @@ class SelectedViewController: UIViewController, UITableViewDataSource {
     var allTweets = [Tweet]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("selected tweet: \(selectedTimeline)")
         
         self.selectedTimelineView.dataSource = self
         
@@ -26,13 +27,14 @@ class SelectedViewController: UIViewController, UITableViewDataSource {
         self.selectedTimelineView.rowHeight = UITableViewAutomaticDimension
         self.selectedTimelineView.estimatedRowHeight = 75
         
-        API.shared.getTweetsFor (username: selectedTimeline.user!.screenName, completion: { (selectedTweet) in
-            if let selectedTweet = selectedTweet {
+        API.shared.getTweetsFor (username: selectedTimeline.user!.screenName, completion: { (selectedTweets) in
+            if let selectedTweets = selectedTweets {
                 OperationQueue.main.addOperation {
-                    self.allTweets = selectedTweet
+                    self.allTweets = selectedTweets
                     self.activityIndicator.stopAnimating()
                     self.selectedTimelineView.reloadData()
-                    print("Selected tweet\(selectedTweet)")
+                    self.selectedTimelineView.reloadData()
+                    print("Selected tweet\(selectedTweets)")
                 }
             }
         })

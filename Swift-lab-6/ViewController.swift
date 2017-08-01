@@ -50,18 +50,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if segue.identifier == "detailViewController" {
+        
+        if segue.identifier == "detailViewController"{
             if let selectedIndex = self.tableView.indexPathForSelectedRow {
                 let selectedTweet = self.allTweets[selectedIndex.row]
-    
-            
-            if let destinationController = segue.destination as? DetailViewController {
-                destinationController.selectedTweet = selectedTweet
+                
+                if let destinationController = segue.destination as? DetailViewController {
+                    destinationController.selectedTweet = selectedTweet
+                }
             }
-          }
-       }
+        }
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allTweets.count
     }
