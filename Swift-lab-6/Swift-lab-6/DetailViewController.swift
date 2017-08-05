@@ -18,6 +18,10 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var textLabel: UILabel!
     
+    @IBAction func viewFeedButton(_ sender: Any) {
+    }
+    
+    
     var selectedTweet: Tweet!
     
     override func viewDidLoad() {
@@ -41,8 +45,5 @@ class DetailViewController: UIViewController {
                 destination.selectedTimeline = self.selectedTweet
             }
         }
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "selectedViewController", sender: nil)
     }
 }

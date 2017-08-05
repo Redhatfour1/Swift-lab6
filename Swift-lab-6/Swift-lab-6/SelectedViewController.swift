@@ -33,7 +33,6 @@ class SelectedViewController: UIViewController, UITableViewDataSource, UITableVi
                     self.allTweets = selectedTweets
                     self.activityIndicator.stopAnimating()
                     self.selectedTimelineView.reloadData()
-                    self.selectedTimelineView.reloadData()
                     print("Selected tweet\(selectedTweets)")
                 }
             }
