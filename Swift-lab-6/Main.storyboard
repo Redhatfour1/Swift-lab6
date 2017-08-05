@@ -189,10 +189,10 @@
                                 <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvn-gr-EBm">
-                                <rect key="frame" x="8" y="323" width="359" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvn-gr-EBm">
+                                <rect key="frame" x="8" y="323" width="359" height="344"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -211,7 +211,18 @@
                             <constraint firstItem="EyY-sN-2pv" firstAttribute="top" secondItem="Xs6-f5-uWU" secondAttribute="bottom" constant="20" id="ryj-Sh-hfo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tweet Timeline" id="dfZ-y0-YcP"/>
+                    <navigationItem key="navigationItem" title="Tweet Timeline" id="dfZ-y0-YcP">
+                        <barButtonItem key="rightBarButtonItem" title="View Feed" style="plain" id="Vxi-dR-Tx8">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0bZ-TZ-VlT">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Feed"/>
+                                <connections>
+                                    <action selector="viewFeedButton:" destination="wsD-nQ-3Em" eventType="touchUpInside" id="h2c-QG-BTE"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="h36-FA-jg6" id="cV9-kd-Pgz"/>
                         <outlet property="locationLabel" destination="EyY-sN-2pv" id="OLp-TK-Mu7"/>
@@ -276,7 +287,6 @@
         <!--Navigation Controller-->
         <scene sceneID="2u6-no-DrB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vxB-Hy-Q40" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XLg-iv-7ch" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="L4Z-SH-u96"/>
@@ -289,6 +299,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nCj-TS-0RM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vxB-Hy-Q40" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="137.18140929535232"/>
         </scene>
